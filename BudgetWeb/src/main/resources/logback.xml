@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+  <!-- 定义常量 ，下面可以引用  -->
+  <property name="LOG_HOME" value="i:/1/logs" /><!-- log目录 -->
+  <!-- 控制台输出 -->
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>[%-18(%d{HH:mm:ss.SSS}]%thread)[%-5level %logger{60}]->
+        %msg%n
+      </pattern>
+    </layout>
+  </appender>
+  <!-- 文件输出 -->
+  <appender name="base_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Encoding>UTF-8</Encoding>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_HOME}/log/%d{yyyyMMdd}/base_log.%i.log</fileNamePattern>
+      <!-- 文件名称 -->
+      <maxHistory>35</maxHistory>
+      <!-- 存档日期设置 -->
+      <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <MaxFileSize>400MB</MaxFileSize>
+        <!-- 设置大小 -->
+      </TimeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>[%-18(%d{HH:mm:ss.SSS}]%thread)[%-5level %logger]-> %msg%n</pattern>
+    </encoder>
+    <charset>UTF-8</charset>
+  </appender>
+  <!-- 修改限额的日志 -->
+  <appender name="errorResp"
+            class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_HOME}/errorResp.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_HOME}/log/%d{yyyyMMdd}/errorResp.%d{yyyyMMdd}.log</fileNamePattern>
+      <maxHistory>35</maxHistory><!-- 存档日期为35天 -->
+    </rollingPolicy>
+    <encoder charset="UTF-8">
+      <pattern>%d{HH:mm:ss.SSS} [%logger{60}] %level %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+  <!-- 查询签约商户的日志 -->
+  <logger name="com.yada.wechatweb" level="info" additivity="false">
+    <appender-ref ref="errorResp" />
+    <appender-ref ref="stdout"/>
+  </logger>
+  <logger name="com.yada.wechatweb" level="info"/>
+  <root level="warn">
+    <appender-ref ref="stdout"/>
+    <appender-ref ref="base_log"/>
+  </root>
+</configuration>

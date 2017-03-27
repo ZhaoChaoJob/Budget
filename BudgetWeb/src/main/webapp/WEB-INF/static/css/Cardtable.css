@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* CSS Document */
+*{margin:0;padding:0;font-family:"微软雅黑";font-size:12px;}
+table { border-collapse: collapse; border-spacing: 0; }
+input{margin: 0; vertical-align: baseline; *vertical-align: middle; border:none;}
+a{color:#222;text-decoration: none;}
+img{border:medium none;margin: 0;padding: 0;font-family:"微软雅黑";list-style:none;border:none;border:none;background-color:none;}
+input[type="button"]{ cursor: pointer; -webkit-appearance: button; }
+table {background-color: transparent}
+td{background-color:#fff;}
+form{margin-top:0px; }
+.table_box{width:88%;margin-left:6%;clear:both;}
+.td_input{height:20px;line-height:20px;width:100%;background-color:transparent;color:#666666;font-size:14px;}
+.yama{display:block;height:26px;color:#999999;font-size:12px;line-height:26px;border:1px solid #eeeeee;background-color:#fafafa;width:60px;z-index:10000;}
+.yama img{width:60px;} 
+.logo{width:50%;margin-top:60px;margin-left:25%;margin-bottom:20px;}
+.UserPage_title{margin-bottom:30px;width:88%;margin-left:6%;float:left;line-height:20px;height:20px;font-size:20px;color:#333333;text-align:center;margin-top:10px;}
+.UserPage_title .grayLine{width:32%;height:1px;background-color:#999999;float:left;margin-top:10px;}
+.table-shadow{box-shadow: 0px 0px 12px #ccc;border-radius: 8px;margin-bottom:20px;}
+.tableUser{border-collapse:separate;width:100%;}
+.tableUser td{padding-left:10px;padding-right:10px;line-height:50px;color:#666666;font-size:14px;vertical-align:middle;text-align:center;font-family:"微软雅黑";}
+.tdUser_top_left{border-left:1px solid #eeeeee;border-top:1px solid #eeeeee;border-radius:8px 0 0 0;}
+.tdUser_top_right{border-right:1px solid #eeeeee;border-top:1px solid #eeeeee;border-radius:0 8px 0 0;}
+.tdUser_left{border-left:1px solid #eeeeee;border-top:1px solid #eeeeee;}
+.tdUser_right{border-right:1px solid #eeeeee;border-top:1px solid #eeeeee;}
+.tdUser_center{border-top:1px solid #eeeeee;}
+.tdUser_bottom_left{border-left:1px solid #eeeeee;border-top:1px solid #eeeeee;border-radius:0 0 0 8px;}
+.tdUser_bottom_center{border-top:1px solid #eeeeee;}
+.tdUser_bottom_right{border-right:1px solid #eeeeee;border-top:1px solid #eeeeee;border-radius:0 0 8px 0;}
+.table_Userbut{display:block;font-size:16px;line-height:42px;color:white;width:88%;margin-left:6%;height:42px;border:1px solid #eaeaea;border-radius:8px;-webkit-border-bottom-radius:8px;margin-bottom:10px;margin-top:10px;background-color:#9f1f31;}
+
+.forgetPass{float: right;color:#d80031;line-height: 20px;height: 20px;font-size:12px;}
+			.errorTip{color:#d80031;width:100%;text-align: center;display: block;line-height: 20px;height: 20px;font-size:12px;}
+
+
+
